@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SQLiteNetExtensions.Attributes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,5 +16,10 @@ namespace TusaAlexandraTeodoraLab7.Models
         [MaxLength(250), Unique]
         public string Description { get; set; }
         public DateTime Date { get; set; }
+
+        [ForeignKey(typeof(Shop))]
+        public int ShopID { get; set; }
+
+        public Shop Shop { get; set; }
     }
 }
